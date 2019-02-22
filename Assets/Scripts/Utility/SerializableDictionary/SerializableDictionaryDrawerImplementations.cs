@@ -26,14 +26,14 @@ public class GameObjectFloatDictionaryDrawer : SerializableDictionaryDrawer<Game
 internal class SerializableGameObjectFloatTemplate : SerializableKeyValueTemplate<GameObject, float> {}
 
 // ---------------
-//  Resource => Int
+//  Resource => Float
 // ---------------
-[UnityEditor.CustomPropertyDrawer(typeof(ResourceIntDictionary))]
-public class ResourceInttDictionaryDrawer : SerializableDictionaryDrawer<Resource, int>
+[UnityEditor.CustomPropertyDrawer(typeof(ResourceFloatDictionary))]
+public class ResourceInttDictionaryDrawer : SerializableDictionaryDrawer<Resource, float>
 {
-    protected override SerializableKeyValueTemplate<Resource, int> GetTemplate()
+    protected override SerializableKeyValueTemplate<Resource, float> GetTemplate()
     {
-        return GetGenericTemplate<SerializableResourceIntTemplate>();
+        return GetGenericTemplate<SerializableResourceFloatTemplate>();
     }
 }
-internal class SerializableResourceIntTemplate : SerializableKeyValueTemplate<Resource, int> { }
+internal class SerializableResourceFloatTemplate : SerializableKeyValueTemplate<Resource, float> { }

@@ -15,7 +15,7 @@ public class StringIntDictionary : SerializableDictionary<string, int> {}
 public class GameObjectFloatDictionary : SerializableDictionary<GameObject, float> {}
 
 // ---------------
-//  Resource => Int
+//  Resource => Float
 // ---------------
 [Serializable]
-public class ResourceIntDictionary : SerializableDictionary<Resource, int> { }
+public class ResourceFloatDictionary : SerializableDictionary<Resource, float> { }
