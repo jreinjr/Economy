@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ccad2cce6fd83aa4095f387cada3f933, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7938954962715945841}
   - component: {fileID: 7938954962715945840}
   - component: {fileID: 7938954962715945843}
+  - component: {fileID: 8269192229291606366}
   - component: {fileID: 7938954962715945844}
   m_Layer: 0
   m_Name: Pop
@@ -140,11 +141,11 @@ MonoBehaviour:
   currentStorage:
     _resourceAmountMapStore:
       keys: 
-      values: 
+      values: []
   maxStorage:
     _resourceAmountMapStore:
-      keys: 010000000200000004000000050000000600000007000000
-      values: 640000000a00000005000000020000000a0000000a000000
+      keys: 
+      values: []
 --- !u!114 &7938954962715945840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,11 +159,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Job:
-    task: {fileID: 0}
-    location: {fileID: 0}
+    description: {fileID: 0}
+    transform: {fileID: 0}
     fromInventory: {fileID: 0}
     toInventory: {fileID: 0}
   m_Employer: {fileID: 0}
+  skills:
+    FarmingSkill: 1
 --- !u!114 &7938954962715945843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +179,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Home: {fileID: 0}
+--- !u!114 &8269192229291606366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7938954962715945842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e495ef74d13baa647b212d2d707d6624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DailyMaintenence:
+    _resourceAmountMapStore:
+      keys: 02000000
+      values:
+      - 1
 --- !u!195 &7938954962715945844
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -186,10 +206,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 7
+  m_Acceleration: 12
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 240
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

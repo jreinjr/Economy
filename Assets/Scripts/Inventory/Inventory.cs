@@ -18,4 +18,18 @@ public class Inventory : MonoBehaviour
         currentStorage += newBundle;
         return true;
     }
+
+    public bool CanAfford(ResourceBundle cost)
+    {
+        return (cost.FitsWithin(currentStorage));
+    }
+
+    public bool TryPurchase(ResourceBundle cost)
+    {
+        if (!CanAfford(cost))
+            return false;
+
+        currentStorage -= cost;
+        return true;
+    }
 }

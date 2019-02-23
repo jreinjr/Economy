@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b310906280ac52440bd8e77851f040f2, type: 3}
-  m_Name: New Gather Job Description
+  m_Name: Field Gather
   m_EditorClassIdentifier: 
-  type: 0
-  duration: 0
+  type: 1
+  duration: 1
   output:
     _resourceAmountMapStore:
-      keys: 
-      values: []
+      keys: 02000000
+      values:
+      - 0.1

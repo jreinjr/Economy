@@ -12,9 +12,14 @@ public class Home : MonoBehaviour
     private int m_MaxResidents;
     public int MaxResidents { get { return m_MaxResidents; } protected set { m_MaxResidents = value; } }
 
+    public bool HasVacancy()
+    {
+        return m_Residents.Count < m_MaxResidents;
+    }
+
     public void AddResident(Resident r)
     {
-        if (!m_Residents.Contains(r) && m_Residents.Count < m_MaxResidents)
+        if (!m_Residents.Contains(r) && HasVacancy())
         {
             m_Residents.Add(r);
             r.Home = this;

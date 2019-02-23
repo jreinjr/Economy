@@ -17,6 +17,8 @@ public class GameClock : MonoBehaviour
     [ReadOnly]
     private uint time;
 
+    public uint startTime;
+
     private uint tick;
     private float tickTimer;
     public float tickTimerMax = .2f;
@@ -24,7 +26,7 @@ public class GameClock : MonoBehaviour
     private void Awake()
     {
         tick = 0;
-        time = 0;
+        time = startTime;
         tickTimer = 0;
     }
 

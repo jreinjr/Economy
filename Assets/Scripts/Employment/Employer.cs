@@ -12,6 +12,11 @@ public class Employer : MonoBehaviour
     private List<Job> m_AvailableJobs = new List<Job>();
     public IEnumerable<Job> AvailableJobs { get { return m_AvailableJobs.AsReadOnly(); } }
 
+    public bool HasAvailableJobs()
+    {
+        return m_AvailableJobs.Count > 0;
+    }
+
     public void HireEmployee(Employee e, Job j)
     {
         if (!m_Employees.Contains(e) && m_AvailableJobs.Contains(j))

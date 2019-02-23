@@ -42,6 +42,18 @@ public class ResourceBundle : IEnumerable<float>
         }
     }
 
+    public void Subtract(Resource resource, float amount)
+    {
+        if (_resourceAmountMap.ContainsKey(resource))
+        {
+            _resourceAmountMap[resource] -= amount;
+        }
+        else
+        {
+           // _resourceAmountMap[resource] = amount;
+        }
+    }
+
     public float this[Resource resource]
     {
         get
@@ -88,12 +100,12 @@ public class ResourceBundle : IEnumerable<float>
 
     public static ResourceBundle operator +(ResourceBundle a, ResourceBundle b)
     {
-        return Combine(a, b);
+        return Add(a, b);
     }
 
     public static ResourceBundle operator -(ResourceBundle a, ResourceBundle b)
     {
-        return Combine(a, b * -1);
+        return Subtract(a, b);
     }
 
 
@@ -109,11 +121,20 @@ public class ResourceBundle : IEnumerable<float>
         return bundle;
     }
 
-    private static ResourceBundle Combine(ResourceBundle a, ResourceBundle b)
+    private static ResourceBundle Add(ResourceBundle a, ResourceBundle b)
     {
         foreach (Resource resource in b.Resources)
         {
             a.Add(resource, b[resource]);
+        }
+        return a;
+    }
+
+    private static ResourceBundle Subtract(ResourceBundle a, ResourceBundle b)
+    {
+        foreach (Resource resource in b.Resources)
+        {
+            a.Subtract(resource, b[resource]);
         }
         return a;
     }

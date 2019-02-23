@@ -353,6 +353,28 @@ MonoBehaviour:
   m_Script: {fileID: -73581967, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   previewOnGUI: 1
   enableGUILayout: 1
   drawStateLabels: 1
@@ -363,6 +385,7 @@ MonoBehaviour:
   maxLabelDistance: 10
   controlMouseCursor: 1
   labelScale: 1
+  initLabelScale: 0
 --- !u!4 &214159954
 Transform:
   m_ObjectHideFlags: 0
@@ -519,6 +542,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Field
       objectReference: {fileID: 0}
+    - target: {fileID: 6416930363265654324, guid: 7207bc7f5217f1d45b6ff40426caba6e,
+        type: 3}
+      propertyPath: testJD
+      value: 
+      objectReference: {fileID: 11400000, guid: b117bbc5d765ac24bbd5f0ea9ab24f59,
+        type: 2}
     - target: {fileID: 6416930363265654325, guid: 7207bc7f5217f1d45b6ff40426caba6e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -574,6 +603,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5958170036316574194, guid: 7207bc7f5217f1d45b6ff40426caba6e,
+        type: 3}
+      propertyPath: m_AvailableJobs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958170036316574194, guid: 7207bc7f5217f1d45b6ff40426caba6e,
+        type: 3}
+      propertyPath: m_AvailableJobs.Array.data[0].task
+      value: 
+      objectReference: {fileID: 11400000, guid: b117bbc5d765ac24bbd5f0ea9ab24f59,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7207bc7f5217f1d45b6ff40426caba6e, type: 3}
 --- !u!1 &1823513402

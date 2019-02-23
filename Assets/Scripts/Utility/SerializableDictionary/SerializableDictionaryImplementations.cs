@@ -19,3 +19,9 @@ public class GameObjectFloatDictionary : SerializableDictionary<GameObject, floa
 // ---------------
 [Serializable]
 public class ResourceFloatDictionary : SerializableDictionary<Resource, float> { }
+
+// ---------------
+//  Task => Float
+// ---------------
+[Serializable]
+public class TaskFloatDictionary : SerializableDictionary<TaskType, float> { }

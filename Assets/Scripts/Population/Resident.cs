@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Resident : MonoBehaviour
 {
-    [SerializeField][ReadOnly]
+    [SerializeField]
     private Home m_Home;
     public Home Home { get { return m_Home; } internal set { m_Home = value; } }
 

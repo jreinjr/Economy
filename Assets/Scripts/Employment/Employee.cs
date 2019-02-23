@@ -12,6 +12,8 @@ public class Employee : MonoBehaviour
     private Employer m_Employer;
     public Employer Employer { get { return m_Employer; } internal set { m_Employer = value; } }
 
+    public SkillBundle skills = new SkillBundle();
+
     private void Awake()
     {
         m_Job = null;

@@ -48,6 +48,22 @@ MonoBehaviour:
     transform: {fileID: 1437426736}
     fromInventory: {fileID: 0}
     toInventory: {fileID: 6416930363265654323}
+  - description: {fileID: 11400000, guid: b117bbc5d765ac24bbd5f0ea9ab24f59, type: 2}
+    transform: {fileID: 1437426736}
+    fromInventory: {fileID: 0}
+    toInventory: {fileID: 6416930363265654323}
+  - description: {fileID: 11400000, guid: b117bbc5d765ac24bbd5f0ea9ab24f59, type: 2}
+    transform: {fileID: 1437426736}
+    fromInventory: {fileID: 0}
+    toInventory: {fileID: 6416930363265654323}
+  - description: {fileID: 11400000, guid: b117bbc5d765ac24bbd5f0ea9ab24f59, type: 2}
+    transform: {fileID: 1437426736}
+    fromInventory: {fileID: 0}
+    toInventory: {fileID: 6416930363265654323}
+  - description: {fileID: 11400000, guid: b117bbc5d765ac24bbd5f0ea9ab24f59, type: 2}
+    transform: {fileID: 1437426736}
+    fromInventory: {fileID: 0}
+    toInventory: {fileID: 6416930363265654323}
 --- !u!1001 &6740360918561549073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73,7 +89,7 @@ PrefabInstance:
     - target: {fileID: 326254382546384164, guid: 97df171938b18cf43b258331444850ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 326254382546384164, guid: 97df171938b18cf43b258331444850ba,
         type: 3}

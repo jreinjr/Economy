@@ -29,7 +29,7 @@ internal class SerializableGameObjectFloatTemplate : SerializableKeyValueTemplat
 //  Resource => Float
 // ---------------
 [UnityEditor.CustomPropertyDrawer(typeof(ResourceFloatDictionary))]
-public class ResourceInttDictionaryDrawer : SerializableDictionaryDrawer<Resource, float>
+public class ResourceFloattDictionaryDrawer : SerializableDictionaryDrawer<Resource, float>
 {
     protected override SerializableKeyValueTemplate<Resource, float> GetTemplate()
     {
@@ -37,3 +37,16 @@ public class ResourceInttDictionaryDrawer : SerializableDictionaryDrawer<Resourc
     }
 }
 internal class SerializableResourceFloatTemplate : SerializableKeyValueTemplate<Resource, float> { }
+
+// ---------------
+//  Task => Float
+// ---------------
+[UnityEditor.CustomPropertyDrawer(typeof(ResourceFloatDictionary))]
+public class TaskFloattDictionaryDrawer : SerializableDictionaryDrawer<TaskType, float>
+{
+    protected override SerializableKeyValueTemplate<TaskType, float> GetTemplate()
+    {
+        return GetGenericTemplate<SerializableTaskFloatTemplate>();
+    }
+}
+internal class SerializableTaskFloatTemplate : SerializableKeyValueTemplate<TaskType, float> { }
