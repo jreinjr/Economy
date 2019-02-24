@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 7938954962715945846}
   - component: {fileID: 7938954962715945847}
   - component: {fileID: 7938954962715945841}
+  - component: {fileID: 8562526358179285335}
   - component: {fileID: 7938954962715945840}
   - component: {fileID: 7938954962715945843}
   - component: {fileID: 8269192229291606366}
@@ -139,13 +140,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStorage:
-    _resourceAmountMapStore:
-      keys: 
-      values: []
+    Silver: 0
+    Food: 0
   maxStorage:
-    _resourceAmountMapStore:
-      keys: 
-      values: []
+    Silver: 100
+    Food: 5
+--- !u!114 &8562526358179285335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7938954962715945842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9da3fab1b8f29a40b31f8843b17be84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_goal: {fileID: 11400000, guid: d5cef378d5cd82042bf313f822aeaaea, type: 2}
 --- !u!114 &7938954962715945840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +175,7 @@ MonoBehaviour:
     transform: {fileID: 0}
     fromInventory: {fileID: 0}
     toInventory: {fileID: 0}
+    m_Employer: {fileID: 0}
   m_Employer: {fileID: 0}
   skills:
     FarmingSkill: 1
@@ -192,10 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DailyMaintenence:
-    _resourceAmountMapStore:
-      keys: 02000000
-      values:
-      - 1
+    Silver: 0
+    Food: 1
 --- !u!195 &7938954962715945844
 NavMeshAgent:
   m_ObjectHideFlags: 0

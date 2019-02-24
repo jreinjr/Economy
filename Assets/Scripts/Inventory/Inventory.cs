@@ -10,12 +10,12 @@ public class Inventory : MonoBehaviour
 
     public bool Add(ResourceBundle newBundle)
     {
-        var newStorage = currentStorage + newBundle;
+        var newStorage = currentStorage.Add(newBundle);
 
         if (newStorage.FitsWithin(maxStorage) == false)
             return false;
 
-        currentStorage += newBundle;
+        currentStorage.Add(newBundle);
         return true;
     }
 
@@ -29,7 +29,8 @@ public class Inventory : MonoBehaviour
         if (!CanAfford(cost))
             return false;
 
-        currentStorage -= cost;
+        currentStorage.Subtract(cost);
         return true;
     }
+    
 }

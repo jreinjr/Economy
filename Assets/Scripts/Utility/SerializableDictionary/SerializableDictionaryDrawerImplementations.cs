@@ -42,11 +42,11 @@ internal class SerializableResourceFloatTemplate : SerializableKeyValueTemplate<
 //  Task => Float
 // ---------------
 [UnityEditor.CustomPropertyDrawer(typeof(ResourceFloatDictionary))]
-public class TaskFloattDictionaryDrawer : SerializableDictionaryDrawer<TaskType, float>
+public class TaskFloattDictionaryDrawer : SerializableDictionaryDrawer<JobType, float>
 {
-    protected override SerializableKeyValueTemplate<TaskType, float> GetTemplate()
+    protected override SerializableKeyValueTemplate<JobType, float> GetTemplate()
     {
         return GetGenericTemplate<SerializableTaskFloatTemplate>();
     }
 }
-internal class SerializableTaskFloatTemplate : SerializableKeyValueTemplate<TaskType, float> { }
+internal class SerializableTaskFloatTemplate : SerializableKeyValueTemplate<JobType, float> { }

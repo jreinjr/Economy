@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TaskType
+public enum JobType
     {
         Idle,
-        Farming
+        Farmer
     }
 
 [System.Serializable]
 [CreateAssetMenu(menuName = "Economy/Simple Job Description")]
 public class JobDescription : ScriptableObject
 {
-    public TaskType type;
+    public JobType type;
     public float duration;
 }

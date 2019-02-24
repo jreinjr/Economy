@@ -17,141 +17,59 @@ public enum Resource
 }
 
 [System.Serializable]
-public class ResourceBundle : IEnumerable<float>
+public struct ResourceBundle
 {
-    [SerializeField]
-    private ResourceFloatDictionary _resourceAmountMapStore = ResourceFloatDictionary.New<ResourceFloatDictionary>();
-    private Dictionary<Resource, float> _resourceAmountMap
+    public float Silver;
+    public float Food;
+
+    public ResourceBundle(Resource r, float amount) : this()
     {
-        get { return _resourceAmountMapStore.dictionary; }
-    }
-    public Dictionary<Resource, float>.KeyCollection Resources { get { return _resourceAmountMap.Keys; } }
-    public Dictionary<Resource, float>.ValueCollection Values { get { return _resourceAmountMap.Values; } }
-
-
-
-    public void Add(Resource resource, float amount)
-    {
-        if (_resourceAmountMap.ContainsKey(resource))
+        switch (r)
         {
-            _resourceAmountMap[resource] += amount;
-        }
-        else
-        {
-            _resourceAmountMap[resource] = amount;
+            case Resource.Silver:
+                Silver = amount;
+                break;
+            case Resource.Food:
+                Food = amount;
+                break;
         }
     }
 
-    public void Subtract(Resource resource, float amount)
+    public ResourceBundle(ResourceBundle template)
     {
-        if (_resourceAmountMap.ContainsKey(resource))
-        {
-            _resourceAmountMap[resource] -= amount;
-        }
-        else
-        {
-           // _resourceAmountMap[resource] = amount;
-        }
-    }
-
-    public float this[Resource resource]
-    {
-        get
-        {
-            if (_resourceAmountMap.ContainsKey(resource))
-            {
-                return _resourceAmountMap[resource];
-            }
-            else
-            {
-                return 0f;
-            }
-        }
-
-        set
-        {
-            _resourceAmountMap[resource] = value;
-        }
-    }
-
-    public IEnumerator<float> GetEnumerator()
-    {
-        return _resourceAmountMap.Values.GetEnumerator();
-    }
-
-    System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-    {
-        return _resourceAmountMap.Values.GetEnumerator();
-    }
-
-    public override string ToString()
-    {
-        string output = "";
-
-        foreach(Resource resource in _resourceAmountMap.Keys)
-        {
-            output += string.Format("{0}: {1}  ", resource, _resourceAmountMap[resource]);
-            output += string.Format("{0}: {1}  ", resource, _resourceAmountMap[resource]);
-        }
-
-        return output;
-    }
-
-
-    public static ResourceBundle operator +(ResourceBundle a, ResourceBundle b)
-    {
-        return Add(a, b);
-    }
-
-    public static ResourceBundle operator -(ResourceBundle a, ResourceBundle b)
-    {
-        return Subtract(a, b);
-    }
-
-
-    public static ResourceBundle operator *(ResourceBundle bundle, float i)
-    {
-        var resources = new List<Resource>(bundle.Resources);
-
-        foreach(Resource resource in resources)
-        {
-            bundle[resource] *= i;
-        }
-
-        return bundle;
-    }
-
-    private static ResourceBundle Add(ResourceBundle a, ResourceBundle b)
-    {
-        foreach (Resource resource in b.Resources)
-        {
-            a.Add(resource, b[resource]);
-        }
-        return a;
-    }
-
-    private static ResourceBundle Subtract(ResourceBundle a, ResourceBundle b)
-    {
-        foreach (Resource resource in b.Resources)
-        {
-            a.Subtract(resource, b[resource]);
-        }
-        return a;
+        Silver = template.Silver;
+        Food = template.Food;
     }
 
     public bool FitsWithin(ResourceBundle b)
     {
-        return FitsWithin(this, b);
+        return (
+            Silver <= b.Silver &&
+            Food <= b.Food
+            );
     }
 
-    public static bool FitsWithin(ResourceBundle a, ResourceBundle b)
+    public ResourceBundle Add(ResourceBundle b)
     {
-        foreach (Resource resource in a.Resources)
-        {
-            // If at least one resource is bigger in A, it won't fit inside B
-            if (a[resource] > b[resource])
-                return false;
-        }
-        return true;
+        var result = new ResourceBundle(this);
+        result.Silver += b.Silver;
+        result.Food += b.Food;
+        return result;
+    }
+
+    public ResourceBundle Subtract(ResourceBundle b)
+    {
+        var result = new ResourceBundle(this);
+        result.Silver -= b.Silver;
+        result.Food -= b.Food;
+        return result;
+    }
+
+    public ResourceBundle Multiply(float f)
+    {
+        var result = new ResourceBundle(this);
+        result.Silver *= f;
+        result.Food *= f;
+        return result;
     }
 }

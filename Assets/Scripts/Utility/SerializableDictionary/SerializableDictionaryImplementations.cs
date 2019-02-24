@@ -24,4 +24,4 @@ public class ResourceFloatDictionary : SerializableDictionary<Resource, float> {
 //  Task => Float
 // ---------------
 [Serializable]
-public class TaskFloatDictionary : SerializableDictionary<TaskType, float> { }
+public class TaskFloatDictionary : SerializableDictionary<JobType, float> { }

@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public List<Employee> Employees;
     public List<Employer> Employers;
     public List<Home> Homes;
     public List<Resident> Residents;
 
-    private void Start()
+    private void Awake()
     {
-        GameClock.OnTick += OnTick;
+        instance = this;
 
         Employers = (FindObjectsOfType(typeof(Employer)) as Employer[]).ToList();
         Employees = (FindObjectsOfType(typeof(Employee)) as Employee[]).ToList();
@@ -22,37 +23,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void DoHiring()
+    private void Start()
     {
-        foreach (var unemployed in Employees.Where(p => !p.HasJob()))
-        {
-            var newEmployer =
-                Employers.Where(p => p.HasAvailableJobs())
-                .OrderBy(p => (p.transform.position - unemployed.transform.position).sqrMagnitude)
-                .FirstOrDefault();
-
-            newEmployer.HireEmployee(unemployed, newEmployer.AvailableJobs.FirstOrDefault());
-        }
-    }
-
-    void DoResidency()
-    {
-        foreach(var homeless in Residents.Where(p => !p.HasHome()))
-        {
-            Debug.Log(homeless.gameObject.name);
-            var newHome =
-                Homes.Where(p => p.HasVacancy())
-                .OrderBy(p => (p.transform.position - homeless.transform.position).sqrMagnitude)
-                .FirstOrDefault();
-
-            newHome.AddResident(homeless);
-        }
+        GameClock.OnTick += OnTick;
     }
 
     private void OnTick(object sender, GameClock.OnTickEventArgs e)
     {
         Debug.Log(e.time);
-        DoHiring();
-        DoResidency();
     }
 }
